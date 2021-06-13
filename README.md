@@ -34,7 +34,7 @@ What are the steps required to install your project? Provide a step-by-step desc
 
 Provide instructions and examples for use. Include screenshots as needed.
 
-![alt text](assets/images/screenshot.jpg)
+![alt text](public/images/screenshot.jpg)
 
 ## Credits
 
