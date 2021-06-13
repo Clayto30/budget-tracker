@@ -18,7 +18,7 @@ request.onsuccess = function(event) {
 
     // check if app is online, if yes run function to send all local db data to api 
     if (navigator.onLine) {
-        // we'll do the function here
+        sendDeposit();
     }
 };
 
@@ -36,4 +36,50 @@ function saveRecord(record) {
 
     // add record to your store with add method
     depositObjectStore.add(record);
-}
+};
+
+function sendDeposit() {
+    // open a transaction on db
+    const transaction = db.transaction(['deposit'], 'readwrite');
+
+    // access your object store
+    const depositObjectStore = transaction.objectStore('deposit');
+
+    // get all records from store and set to a variable
+    const getAll = depositObjectStore.getAll();
+
+    // upon a successful .getAll() execution, run this function
+    getAll.onsuccess = function() {
+        // if there was data in indexedDb's store, let's send it to the api server
+        if (getAll.result.length > 0) {
+            fetch('/api/transaction', {
+                method: 'POST',
+                body: JSON.stringify(getAll.result),
+                headers: {
+                    Accept: 'application/json, text/plain, */*',
+                    'Content-Type' : 'application/json'
+                }
+            })
+            .then(response => response.json())
+            .then(serverResponse => {
+                if (serverResponse.message) {
+                    throw new Error(serverResponse);
+                }
+                // open one more transaction
+                const transaction = db.transaction(['deposit'], 'readwrite');
+                // access the deposit object sore
+                const depositObjectStore = transaction.objectStore('deposit');
+                // clear all items in your store
+                depositObjectStore.clear();
+
+                alert('All saved transactions have been submitted!');
+            })
+            .catch(err => {
+                console.log(err);
+            });
+        }
+    };
+};
+
+// listen for app coming back online
+window.addEventListener('online', sendDeposit);
