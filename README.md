@@ -12,10 +12,8 @@ At a minimum, your project README needs a title and a short description explaini
 
 Lastly, if your project is deployed, include a link to the deployed application here.
 
-If you're new to Markdown, read the GitHub guide on [Mastering Markdown](https://guides.github.com/features/mastering-markdown/).
-
-If you need an example of a good README, check out [the VSCode repository](https://github.com/microsoft/vscode).
-
+Heroku Deployment: [Budget Tracker](https://sleepy-sands-14482.herokuapp.com/)
+[GitHub Repostitory](https://github.com/Clayto30/budget-tracker).
 
 ## Table of Contents (Optional)
 
@@ -36,12 +34,7 @@ What are the steps required to install your project? Provide a step-by-step desc
 
 Provide instructions and examples for use. Include screenshots as needed.
 
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
-
-```md
 ![alt text](assets/images/screenshot.jpg)
-```
-
 
 ## Credits
 
