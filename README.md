@@ -2,39 +2,36 @@
 
 ## Description 
 
-Your GitHub profile is an extremely important aspect of your public identity as a developer. A well-crafted one allows you to show off your work to other developers as well as potential employers. An important component of your GitHub profile—and one that many new developers often overlook—is the README.md file.
+This budget tracking app helps users keep track on their spending, quickly and easily wherever they go. This application even offers users offline functionality for handling their finanacial information!
 
-The quality of a README often differentiates a good project from a bad project. A good one takes advantage of the opportunity to explain and showcase what your application does, justify the technologies used, and even talk about some of the challenges you faced and features you hope to implement in the future. A good README helps you stand out among the large crowd of developers putting their work on GitHub.
+Users are can add and subtract amounts on their budget with or without internet connection. If users perform a transaction while offline, the transaction is stored, and loaded once they are back on the web. 
 
-There's no one right way to structure a good README. There is one very wrong way, however, and that is to not include a README at all or to create a very anemic one. This guide outlines a few best practices. As you progress in your career, you will develop your own ideas about what makes a good README.
-
-At a minimum, your project README needs a title and a short description explaining the what, why, and how. What was your motivation? Why did you build this project? (Note: The answer is not "Because it was a homework assignment.") What problem does it solve? What did you learn? What makes your project stand out?
-
-Lastly, if your project is deployed, include a link to the deployed application here.
-
+This web application is deployed on Heroku and the repository is on GitHub.
 Heroku Deployment: [Budget Tracker](https://sleepy-sands-14482.herokuapp.com/)
 [GitHub Repostitory](https://github.com/Clayto30/budget-tracker).
 
 ## Table of Contents (Optional)
 
-If your README is very long, add a table of contents to make it easy for users to find what they need.
-
 * [Installation](#installation)
 * [Usage](#usage)
+* [Tests](#tests)
 * [Credits](#credits)
 * [License](#license)
 
 
 ## Installation
 
-What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.
-
+Simply visit the app's deployment URL on heroku, and start adding and subtracting amounts from your budget!
 
 ## Usage 
 
-Provide instructions and examples for use. Include screenshots as needed.
+If you gain money, use the arrows to add that amount, name the transaction and click "Add Funds." Do the same for subtracting funds. Your total amount of money will be displayed and a graph will chart your history!
 
 ![alt text](public/images/screenshot.jpg)
+
+## Tests
+
+Open the app in Chrome. Open Chrome Dev Tools and throttle the network at "Offline" under the "Network" tab. Then, go ahead an use the offline functionality of the app. Go ahead and submit a transaction. Then, switch the network throttling back from "Offline." The transaction will be posted! We have offline functionality!
 
 ## Credits
 
